@@ -1,21 +1,22 @@
 import { useState } from 'react'
 import Header from './components/Header';
 import PersonList from './components/PersonList';
+import "./index.css"
+import "./app.css"
 
 
 function App() {
-  const name = "jib"
-  const [age, setAge] = useState(30);
+
 
 
   return (
-    <>
+    <div class="App">
       <Header />
-      <PersonList />
+      <main>
+        <PersonList />
+      </main>
 
-
-
-    </>
+    </div>
   )
 }
 

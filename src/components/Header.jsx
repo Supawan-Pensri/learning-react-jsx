@@ -1,5 +1,10 @@
+import "./Header.css";
+
 export default function Header(){
     return(
-        <h1>แอพของฉัน</h1>
+        <nav>
+            <h1>My Application</h1>
+            <button>Light/Dark</button>
+        </nav>
     )
 }
