@@ -1,9 +1,9 @@
 import "./Header.css";
 
-export default function Header(){
+export default function Header(props){
     return(
         <nav>
-            <h1>My Application</h1>
+            <h1>{props.title}</h1>
             <button>Light/Dark</button>
         </nav>
     )
