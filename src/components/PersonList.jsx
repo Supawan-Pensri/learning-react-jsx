@@ -7,7 +7,7 @@ import User from './User';
 
 export default function PersonList(props) {
 
-    const {data} = props
+    const {data,deleteUser} = props
 
     const [show, setShow] = useState(true)
     return (
@@ -22,7 +22,7 @@ export default function PersonList(props) {
                 {show &&
                     data.map((item) => (
                         // <li key={item.id} style={{borderStyle:'solid',borderColor:item.gender == "ชาย" ? "blue":"pink"}}>
-                        <User key={item.id} item={item}/>
+                        <User key={item.id} item={item} deleteUser={deleteUser}/>
                     ))}
 
             </ul>
