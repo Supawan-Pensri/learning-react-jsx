@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header';
 import PersonList from './components/PersonList';
 import "./index.css"
@@ -15,23 +15,29 @@ function App() {
     // { id: 3, name: "โจ้", gender: "ชาย" },
     // { id: 4, name: "พลอย", gender: "หญิง" },
   ])
-function deleteUser(id) {
 
-  const result = data.filter((user)=>user.id !==id)
-  setData(result)
-}
+  const [theme, setTheme] = useState("light")
 
-useEffect(()=>{
-  console.log("Render Component")
-},[data])
+
+  function deleteUser(id) {
+
+    const result = data.filter((user) => user.id !== id)
+    setData(result)
+  }
+
+  useEffect(() => {
+    console.log("Render Component")
+  }, [data])
   return (
-    <div class="App">
-      <Header title="แอพจัดการข้อมูลประชากร" />
-      <main>
-        <AddForm data={data} setData={setData}/>
-        <PersonList data={data} deleteUser={deleteUser}/>
-      </main>
+    <div className={theme}>
+      <div class="App">
+        <Header title="แอพจัดการข้อมูลประชากร" theme={theme} setTheme={setTheme} />
+        <main>
+          <AddForm data={data} setData={setData} />
+          <PersonList data={data} deleteUser={deleteUser} />
+        </main>
 
+      </div>
     </div>
   )
 }
