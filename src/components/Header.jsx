@@ -1,4 +1,6 @@
 import "./Header.css";
+import { MdSunny } from "react-icons/md";
+import { IoIosMoon } from "react-icons/io";
 
 export default function Header({title,theme,setTheme})  {
 
@@ -14,7 +16,8 @@ export default function Header({title,theme,setTheme})  {
     return(
         <nav>
             <h1>{title}</h1>
-            <button onClick={toggleTheme}>{theme}</button>
+            <span onClick={toggleTheme}>{theme === "light"? <MdSunny size={25} /> : <IoIosMoon size={25} />}</span>
+
         </nav>
     )
 }

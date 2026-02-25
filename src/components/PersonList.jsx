@@ -1,7 +1,9 @@
 import { useState } from 'react';
-
 import "./PersonList.css"
 import User from './User';
+
+import { FaEyeSlash } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 
 
 
@@ -15,7 +17,7 @@ export default function PersonList(props) {
             <div className="header">
                 <h1 style={{color:"orange"}}>จำนวนประชากร {data.length} คน</h1>
 
-                <button onClick={() => setShow(!show)}>{show ? "ซ่อน" : "แสดง"}</button>
+                <span onClick={() => setShow(!show)}>{show ? <FaEyeSlash size={30}  /> : <FaEye size={30} />}</span>
             </div>
 
             <ul>

@@ -16,7 +16,7 @@ function App() {
     // { id: 4, name: "พลอย", gender: "หญิง" },
   ])
 
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState(localStorage.getItem("mode") || "light")
 
 
   function deleteUser(id) {
@@ -26,8 +26,8 @@ function App() {
   }
 
   useEffect(() => {
-    console.log("Render Component")
-  }, [data])
+    localStorage.setItem("mode",theme)
+  },[theme])
   return (
     <div className={theme}>
       <div class="App">
